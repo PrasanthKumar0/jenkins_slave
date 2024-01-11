@@ -14,8 +14,3 @@ variable "private_key" {
   description = "File path of private key."
   default     = "~/.ssh/id_rsa"
 }
-
-variable "domainName" {
-  default = "jenkins.robofarming.link"
-  type    = string
-}
