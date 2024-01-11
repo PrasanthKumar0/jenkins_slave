@@ -1,4 +1,4 @@
-data "aws_ami" "redhat" {
+data "aws_ami" "" {
   most_recent = true
 
   filter {
@@ -20,9 +20,4 @@ data "aws_ami" "redhat" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-}
-
-data "aws_route53_zone" "selected" {
-  name         = "robofarming.link"
-  private_zone = false
 }
