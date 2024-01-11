@@ -62,15 +62,6 @@ resource "aws_instance" "jenkins" {
   }
 }
 
-# Domain block 
-resource "aws_route53_record" "domainName" {
-  zone_id = data.aws_route53_zone.selected.zone_id
-  name    = var.domainName
-  type    = "A"
-  ttl     = 300
-  records = [aws_instance.jenkins.public_ip]
-}
-
 # null resource 
 resource "null_resource" "os_update" {
   depends_on = [aws_instance.jenkins]
